@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+    <url>
+        <loc>https://kjcase.com/</loc>
+        <lastmod>2026-11-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://kjcase.com/assets/hero-studio.jpg</image:loc>
+            <image:title>광진산업 정밀 판금 및 자작나무 맞춤 제조</image:title>
+            <image:caption>스위스 Bystronic 3kW 파이버 레이저, 아마다 절곡기, 6스핀들 2.5D CNC 보유</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://kjcase.com/assets/prod-arcade-cabinet.jpg</image:loc>
+            <image:title>광진산업 아케이드 기체 및 캐비닛 하우징</image:title>
+            <image:caption>내부 스틸 골조와 외부 자작합판 케이싱 일체형 제작</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://kjcase.com/assets/prod-birch-furniture.jpg</image:loc>
+            <image:title>자작나무 친환경 도장 가구</image:title>
+            <image:caption>벤자민 무어 친환경 페인트 도장 및 UV 하도 코팅 프리미엄 가구</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://kjcase.com/assets/prod-sheet-metal.jpg</image:loc>
+            <image:title>정밀 판금 함체 및 브라켓</image:title>
+            <image:caption>바이스트로닉 파이버 레이저 정밀 절단 및 아마다 유압 130T 정밀 절곡</image:caption>
+        </image:image>
+        <image:image>
+            <image:loc>https://kjcase.com/assets/prod-cnc-parts.jpg</image:loc>
+            <image:title>6스핀들 2.5D CNC 맞춤 정밀 부품</image:title>
+            <image:caption>자작나무 합판 2.5D 단차 포켓 가공, 장부홈 및 다중 타공 부품</image:caption>
+        </image:image>
+    </url>
+</urlset>

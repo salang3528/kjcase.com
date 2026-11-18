@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1d22"/>
+      <stop offset="100%" stop-color="#0f1013"/>
+    </linearGradient>
+
+    <!-- Metal Steel Gradient for Left Stem -->
+    <linearGradient id="metalStem" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#e2e4ea"/>
+      <stop offset="100%" stop-color="#9da2b0"/>
+    </linearGradient>
+
+    <!-- Laser & Precision Terracotta Gradient for Upper Wing -->
+    <linearGradient id="laserAccent" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9c4327"/>
+      <stop offset="60%" stop-color="#b85434"/>
+      <stop offset="100%" stop-color="#e06a45"/>
+    </linearGradient>
+
+    <!-- Woodcraft Warm Birch / Steel Synergy Gradient for Lower Wing -->
+    <linearGradient id="woodSynergy" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f5e6d3"/>
+      <stop offset="60%" stop-color="#d8ab7f"/>
+      <stop offset="100%" stop-color="#b88452"/>
+    </linearGradient>
+
+    <filter id="subtleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Squircle / Rounded Container -->
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)"/>
+  <!-- Subtle Border Stroke -->
+  <rect width="504" height="504" x="4" y="4" rx="108" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="8"/>
+
+  <!-- Iconic Monogram 'K' (Sheet Metal + Laser Beam + Wood Precision) -->
+  <g filter="url(#subtleShadow)">
+    <!-- Vertical Pillar: Laser-Cut Steel Plate -->
+    <rect x="116" y="112" width="76" height="288" rx="12" fill="url(#metalStem)"/>
+
+    <!-- Upper Wing: 45° Laser Angled Cut & Bending Vector -->
+    <path d="M 232 238 L 340 126 C 348 118 360 114 372 116 L 388 118 C 398 120 402 132 394 140 L 284 256 L 232 238 Z" 
+          fill="url(#laserAccent)"/>
+
+    <!-- Lower Wing: Natural Birch Woodcraft Angle -->
+    <path d="M 232 274 L 284 256 L 394 372 C 402 380 398 392 388 394 L 372 396 C 360 398 348 394 340 386 L 232 274 Z" 
+          fill="url(#woodSynergy)"/>
+
+    <!-- Precision Focal Spark (Laser Point) -->
+    <circle cx="258" cy="256" r="14" fill="#ffffff"/>
+  </g>
+</svg>
