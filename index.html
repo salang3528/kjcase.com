@@ -2188,7 +2188,7 @@
         }
 
         /* ==========================================
-           광진산업 주요 거래처 및 협력 브랜드 섹션 (페이지 디자인 통일)
+           광진산업 주요 거래처 및 협력 브랜드 섹션 (공식 CI 로고 심볼 & 컬러 매칭)
            ========================================== */
         .kj-partner-section {
             width: 100%;
@@ -2208,54 +2208,131 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 250px;
             background-color: #ffffff;
             border: 1px solid var(--border-light);
-            border-radius: 12px;
-            padding: 2.2rem 1.8rem;
+            border-radius: 14px;
+            padding: 0;
             text-decoration: none;
             color: inherit;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
-            transition: var(--transition);
+            box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
+            overflow: hidden;
         }
 
-        .kj-partner-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--accent);
-            box-shadow: 0 16px 36px rgba(0, 0, 0, 0.07);
+        /* 상단 브랜드별 시그니처 컬러 바 */
+        .kj-card-accent-bar {
+            height: 4px;
+            width: 100%;
+            transition: height 0.25s ease;
         }
+
+        .kj-card-inner {
+            padding: 1.5rem 1.6rem 1.8rem 1.6rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            flex-grow: 1;
+        }
+
+        /* 공식 로고 심볼 플레이트 */
+        .kj-logo-plate {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            height: 90px;
+            padding: 12px 18px;
+            margin-bottom: 1.3rem;
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .kj-partner-card:hover .kj-logo-plate {
+            border-color: #dee2e6;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+            transform: translateY(-2px);
+        }
+
+        .kj-partner-logo-img {
+            max-width: 85%;
+            max-height: 46px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .kj-partner-card:hover .kj-partner-logo-img {
+            transform: scale(1.05);
+        }
+
+        /* 1. 안다미로 (Andamiro Vivid Orange #ff8200 & Dark Charcoal) */
+        .theme-andamiro .kj-card-accent-bar { background: #ff8200; }
+        .theme-andamiro .kj-card-badge { color: #d96f00; background: #fff7ed; border-color: rgba(255, 130, 0, 0.3); }
+        .theme-andamiro .kj-card-arrow { color: #d96f00; }
+        .theme-andamiro:hover {
+            transform: translateY(-8px);
+            border-color: #ff8200;
+            box-shadow: 0 18px 36px rgba(255, 130, 0, 0.16);
+        }
+        .theme-andamiro:hover .kj-card-accent-bar { height: 6px; }
+
+        /* 2. 유니아나 (Uniana Royal Blue #004098) */
+        .theme-uniana .kj-card-accent-bar { background: #004098; }
+        .theme-uniana .kj-card-badge { color: #004098; background: #eff6ff; border-color: rgba(0, 64, 152, 0.3); }
+        .theme-uniana .kj-card-arrow { color: #004098; }
+        .theme-uniana:hover {
+            transform: translateY(-8px);
+            border-color: #004098;
+            box-shadow: 0 18px 36px rgba(0, 64, 152, 0.16);
+        }
+        .theme-uniana:hover .kj-card-accent-bar { height: 6px; }
+
+        /* 3. 코뮤즈 (Komuse Dynamic Orange #f2720c) */
+        .theme-komuse .kj-card-accent-bar { background: #f2720c; }
+        .theme-komuse .kj-card-badge { color: #ea580c; background: #fff7ed; border-color: rgba(242, 114, 12, 0.3); }
+        .theme-komuse .kj-card-arrow { color: #ea580c; }
+        .theme-komuse:hover {
+            transform: translateY(-8px);
+            border-color: #f2720c;
+            box-shadow: 0 18px 36px rgba(242, 114, 12, 0.16);
+        }
+        .theme-komuse:hover .kj-card-accent-bar { height: 6px; }
+
+        /* 4. 뮤토모 (Mutomo Signature Terracotta #b85434) */
+        .theme-mutomo .kj-card-accent-bar { background: #b85434; }
+        .theme-mutomo .kj-card-badge { color: #b85434; background: rgba(184, 84, 52, 0.08); border-color: rgba(184, 84, 52, 0.3); }
+        .theme-mutomo .kj-card-arrow { color: #b85434; }
+        .theme-mutomo:hover {
+            transform: translateY(-8px);
+            border-color: #b85434;
+            box-shadow: 0 18px 36px rgba(184, 84, 52, 0.16);
+        }
+        .theme-mutomo:hover .kj-card-accent-bar { height: 6px; }
 
         .kj-card-badge {
             display: inline-block;
             font-family: 'Plus Jakarta Sans', sans-serif;
             font-size: 0.72rem;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            font-weight: 600;
-            color: var(--text-muted);
-            background: var(--bg-subtle);
-            border: 1px solid var(--border-light);
-            padding: 0.35rem 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.65rem;
             border-radius: 4px;
-            margin-bottom: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .kj-brand-highlight .kj-card-badge {
-            color: var(--accent);
-            background: var(--accent-soft);
-            border-color: rgba(184, 84, 52, 0.25);
+            border: 1px solid transparent;
+            margin-bottom: 0.8rem;
         }
 
         .kj-card-name-ko {
             display: block;
             font-family: 'Cafe24Ssurround', var(--font-sans);
-            font-size: 1.35rem;
+            font-size: 1.28rem;
             font-weight: normal;
             line-height: 1.3;
             color: var(--text-primary);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.2rem;
             letter-spacing: -0.02em;
         }
 
@@ -2268,16 +2345,34 @@
             color: var(--text-muted);
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            margin-bottom: 1.1rem;
+            margin-bottom: 0.9rem;
         }
 
         .kj-card-info {
             display: block;
-            font-size: 0.92rem;
-            line-height: 1.65;
+            font-size: 0.9rem;
+            line-height: 1.6;
             color: var(--text-secondary);
-            margin: 0 0 1.6rem 0;
+            margin: 0 0 1.2rem 0;
             word-break: keep-all;
+        }
+
+        /* 핵심 실적 칩 (Tags) */
+        .kj-feature-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .kj-tag {
+            font-size: 0.75rem;
+            color: #4b5563;
+            background: #f3f4f6;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            font-weight: 500;
+            letter-spacing: -0.01em;
         }
 
         .kj-card-arrow {
@@ -2286,11 +2381,10 @@
             justify-content: space-between;
             font-family: 'Plus Jakarta Sans', var(--font-sans);
             font-size: 0.82rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            color: var(--accent);
-            padding-top: 1.1rem;
-            border-top: 1px solid var(--border-light);
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f3f5;
             transition: var(--transition);
         }
 
@@ -2315,11 +2409,10 @@
             }
             .kj-partner-grid {
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 1.2rem;
             }
-            .kj-partner-card {
-                padding: 1.8rem 1.4rem;
-                min-height: auto;
+            .kj-card-inner {
+                padding: 1.4rem 1.3rem;
             }
         }
     </style>
@@ -2796,58 +2889,98 @@
 
             <div class="kj-partner-grid stagger-wrap">
                 <!-- 1. 안다미로 -->
-                <a href="https://www.andamiro.com/kr/" target="_blank" rel="noopener noreferrer" class="kj-partner-card stagger-item">
-                    <div>
-                        <span class="kj-card-badge">Arcade Cabinet</span>
-                        <strong class="kj-card-name-ko">(주)안다미로</strong>
-                        <span class="kj-card-name-en">ANDAMIRO</span>
-                        <p class="kj-card-info">펌프잇업 등 글로벌 아케이드 게임기 개발 및 제조 전문기업</p>
-                    </div>
-                    <div class="kj-card-arrow">
-                        <span>공식 홈페이지</span>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <a href="https://www.andamiro.com/kr/" target="_blank" rel="noopener noreferrer" class="kj-partner-card theme-andamiro stagger-item">
+                    <div class="kj-card-accent-bar"></div>
+                    <div class="kj-card-inner">
+                        <div>
+                            <div class="kj-logo-plate">
+                                <img src="assets/logos/andamiro.png" alt="(주)안다미로 공식 로고" class="kj-partner-logo-img" loading="lazy">
+                            </div>
+                            <span class="kj-card-badge">Arcade & Gaming</span>
+                            <strong class="kj-card-name-ko">(주)안다미로</strong>
+                            <span class="kj-card-name-en">GLOBAL AMUSEMENT LEADER</span>
+                            <p class="kj-card-info">펌프잇업(Pump It Up) 등 전 세계 오락실 문화를 선도하는 글로벌 아케이드 체감형 게임기 전문 개발·제조 기업</p>
+                            <div class="kj-feature-tags">
+                                <span class="kj-tag">#펌프잇업 공식제작</span>
+                                <span class="kj-tag">#대형 아케이드 판금</span>
+                            </div>
+                        </div>
+                        <div class="kj-card-arrow">
+                            <span>공식 홈페이지 바로가기</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
                     </div>
                 </a>
 
                 <!-- 2. 유니아나 -->
-                <a href="https://www.uniana.com/" target="_blank" rel="noopener noreferrer" class="kj-partner-card stagger-item">
-                    <div>
-                        <span class="kj-card-badge">Game & Platform</span>
-                        <strong class="kj-card-name-ko">(주)유니아나</strong>
-                        <span class="kj-card-name-en">UNIANA</span>
-                        <p class="kj-card-info">아케이드·비디오 게임 개발 및 국내외 퍼블리싱 전문기업</p>
-                    </div>
-                    <div class="kj-card-arrow">
-                        <span>공식 홈페이지</span>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <a href="https://www.uniana.com/" target="_blank" rel="noopener noreferrer" class="kj-partner-card theme-uniana stagger-item">
+                    <div class="kj-card-accent-bar"></div>
+                    <div class="kj-card-inner">
+                        <div>
+                            <div class="kj-logo-plate">
+                                <img src="assets/logos/uniana.png" alt="(주)유니아나 공식 로고" class="kj-partner-logo-img" loading="lazy">
+                            </div>
+                            <span class="kj-card-badge">Game & Platform</span>
+                            <strong class="kj-card-name-ko">(주)유니아나</strong>
+                            <span class="kj-card-name-en">DIGITAL ENTERTAINMENT</span>
+                            <p class="kj-card-info">아케이드·비디오 게임 하드웨어 개발 및 글로벌 퍼블리싱을 아우르는 대한민국 대표 종합 엔터테인먼트 기업</p>
+                            <div class="kj-feature-tags">
+                                <span class="kj-tag">#대형 체감형 기체</span>
+                                <span class="kj-tag">#정밀 조립·배선</span>
+                            </div>
+                        </div>
+                        <div class="kj-card-arrow">
+                            <span>공식 홈페이지 바로가기</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
                     </div>
                 </a>
 
                 <!-- 3. 코뮤즈 -->
-                <a href="http://www.komuse.com/" target="_blank" rel="noopener noreferrer" class="kj-partner-card stagger-item">
-                    <div>
-                        <span class="kj-card-badge">Amusement Hardware</span>
-                        <strong class="kj-card-name-ko">(주)코뮤즈</strong>
-                        <span class="kj-card-name-en">KOMUSE</span>
-                        <p class="kj-card-info">타워볼 등 아케이드 게임기 및 엔터테인먼트 기기 제조</p>
-                    </div>
-                    <div class="kj-card-arrow">
-                        <span>공식 홈페이지</span>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <a href="http://www.komuse.com/" target="_blank" rel="noopener noreferrer" class="kj-partner-card theme-komuse stagger-item">
+                    <div class="kj-card-accent-bar"></div>
+                    <div class="kj-card-inner">
+                        <div>
+                            <div class="kj-logo-plate">
+                                <img src="assets/logos/komuse.png" alt="(주)코뮤즈 공식 로고" class="kj-partner-logo-img" loading="lazy">
+                            </div>
+                            <span class="kj-card-badge">Amusement Hardware</span>
+                            <strong class="kj-card-name-ko">(주)코뮤즈</strong>
+                            <span class="kj-card-name-en">AMUSEMENT INNOVATION</span>
+                            <p class="kj-card-info">타워볼, 스피드 농구 등 국내외 대형 테마파크 및 게임센터의 베스트셀러 어뮤즈먼트 기기를 제조하는 선도기업</p>
+                            <div class="kj-feature-tags">
+                                <span class="kj-tag">#타워볼 등 인기기기</span>
+                                <span class="kj-tag">#외장 하우징 양산</span>
+                            </div>
+                        </div>
+                        <div class="kj-card-arrow">
+                            <span>공식 홈페이지 바로가기</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
                     </div>
                 </a>
 
                 <!-- 4. 뮤토모 -->
-                <a href="https://www.mu-tomo.com/" target="_blank" rel="noopener noreferrer" class="kj-partner-card kj-brand-highlight stagger-item">
-                    <div>
-                        <span class="kj-card-badge">Art & Living</span>
-                        <strong class="kj-card-name-ko">뮤토모</strong>
-                        <span class="kj-card-name-en">MUTOMO ART PROJECT</span>
-                        <p class="kj-card-info">예술 작품을 현대적으로 재해석한 디자인 원목가구·오브제 브랜드</p>
-                    </div>
-                    <div class="kj-card-arrow">
-                        <span>공식 스토어</span>
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <a href="https://www.mu-tomo.com/" target="_blank" rel="noopener noreferrer" class="kj-partner-card theme-mutomo stagger-item">
+                    <div class="kj-card-accent-bar"></div>
+                    <div class="kj-card-inner">
+                        <div>
+                            <div class="kj-logo-plate">
+                                <img src="assets/logos/mutomo.png" alt="뮤토모 아트 프로젝트 공식 로고" class="kj-partner-logo-img" loading="lazy">
+                            </div>
+                            <span class="kj-card-badge">Art & Living Object</span>
+                            <strong class="kj-card-name-ko">뮤토모</strong>
+                            <span class="kj-card-name-en">SCANDINAVIAN ATELIER</span>
+                            <p class="kj-card-info">자작나무 고유의 결에 벤자민 무어 친환경 수성 도장을 입혀 예술적 오브제와 가구를 창작하는 프리미엄 브랜드</p>
+                            <div class="kj-feature-tags">
+                                <span class="kj-tag">#자작합판 가구</span>
+                                <span class="kj-tag">#친환경 수성도장</span>
+                            </div>
+                        </div>
+                        <div class="kj-card-arrow">
+                            <span>공식 스토어 바로가기</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </div>
                     </div>
                 </a>
             </div>
